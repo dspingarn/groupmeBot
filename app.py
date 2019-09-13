@@ -11,6 +11,8 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
+  print("Got a new message!")
+  print(data)
 
   # We don't want to reply to ourselves!
   if data['name'] != 'alpha-demo-bot':
@@ -28,3 +30,4 @@ def send_message(msg):
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()
+  
