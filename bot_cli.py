@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 ##
-# Assuming we've started up the bot on localhost using gunicorn,
+# Assuming we've started up the bot on localhost,
 # this program provides a CLI for testing the bot locally before
 # deployment to heroku
 ##
@@ -31,6 +31,18 @@ def send_to_bot(msg):
           "name": msg['author'],
           "text": msg['text'],
          }
+  params = json.dumps(data).encode('utf-8')
+
+  request = Request(url, data=params)
+  request.add_header('Content-Type', 'application/json')
+
+  reply = urlopen(request).read().decode()
+
+def request_canned_message(title):
+  url = 'http://127.0.0.1:8000/canned'
+  data = {
+    "topic" : title,
+  }
   params = json.dumps(data).encode('utf-8')
 
   request = Request(url, data=params)

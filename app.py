@@ -11,14 +11,15 @@ from bot.bot_interface import BotInterface
 
 app = Flask(__name__)
 bi  = BotInterface()
+BOT_NAME = bi.bot.BOT_NAME
 
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
   print(data)
 
-  # We don't want to reply to ourselves!
-  if data['name'] != 'alpha-demo-bot':
+  # Don't reply to self, and must mention the bot
+  if data['name'] != BOT_NAME and BOT_NAME in msg['text'].lower():
     msg = {}
     msg['author']    = data['name']
     msg['author_id'] = data['sender_id']

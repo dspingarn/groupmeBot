@@ -2,12 +2,19 @@ Alpha Demo Bot
 ======
 
 This is the first bot I'm making to interact with groupme.
-http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/ for original bot 
+http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/ for original bot
+
+Changelog
+-------------
+
+1.0.2: Simple response handling
+1.0.1: Local client added
+1.0.0: Simple echo bot
 
 Local Testing
 -------------
 
-Since I was tired of continually deploying broken stuff to Heroku, I wrote a small bot client in CLI; the process for local running is:
+Run the local client: 
 
 ```
 $ source debug_setup.sh # unix only
@@ -16,8 +23,6 @@ $ gunicorn app:app --log-file bot.log & # Run botserver in background, only for 
 $ waitress-serve --listen=*:8000 app:app # the first parameter is app.py in app:app
 $ python3 bot_cli.py # Run CLI for sending messages to bot
 ```
-
-It's a little hacky (the botserver determines if it's in debug mode and prints responses instead of sending them back over HTTP), but it works and is good enough for simple tests.
 
 data looks like
 {
