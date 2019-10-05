@@ -16,7 +16,7 @@ class BotController:
         used_any = lambda word_list: any(map(lambda x : x in text, word_list))
 
         if BotController.BOT_NAME in text and used_any(BotController.GREETING_WORDS):
-            msg_to_send['text'] = 'Hello there, ' + recd_msg['name'] + '!'
+            msg_to_send['text'] = 'Hello there, ' + recd_msg['author'] + '!'
         elif 'text' == 'help':
             msg_to_send['text'] = 'No help for you!'
         else:

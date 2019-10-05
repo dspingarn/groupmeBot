@@ -19,7 +19,7 @@ def webhook():
   print(data)
 
   # Don't reply to self, and must mention the bot
-  if data['name'] != BOT_NAME and BOT_NAME in msg['text'].lower():
+  if data['name'] != BOT_NAME and BOT_NAME in data['text'].lower():
     msg = {}
     msg['author']    = data['name']
     msg['author_id'] = data['sender_id']
