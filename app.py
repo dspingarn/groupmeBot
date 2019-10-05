@@ -32,7 +32,7 @@ def webhook():
   return "ok", 200
 
 def send_message(msg):
-  if os.environ['DEBUG'] == '1':
+  if "DEBUG" in os.environ:
     print('[Alpha Bot]: ' + msg)
     return
 
