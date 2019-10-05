@@ -17,7 +17,7 @@ class BotController:
 
         if BotController.BOT_NAME in text and used_any(BotController.GREETING_WORDS):
             msg_to_send['text'] = 'Hello there, ' + recd_msg['author'] + '!'
-        elif 'text' == 'help':
+        elif 'help' in text:
             msg_to_send['text'] = 'No help for you!'
         else:
             msg_to_send['text'] = 'Echo: ' + recd_msg['text']
