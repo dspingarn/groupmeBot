@@ -1,7 +1,7 @@
 class BotController:
 
     GREETING_WORDS = ['hello', 'hi', 'hey']
-    BOT_NAME = 'alpha-demo-bot'
+    BOT_NAME = 'foodbot'
 
     def __init__(self):
         pass

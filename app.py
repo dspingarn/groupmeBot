@@ -33,7 +33,7 @@ def webhook():
 
 def send_message(msg):
   if "DEBUG" in os.environ:
-    print('[Alpha Bot]: ' + msg)
+    print('[Foodbot]: ' + msg)
     return
 
   # for non-debug purposes

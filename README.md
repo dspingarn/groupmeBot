@@ -1,4 +1,4 @@
-Alpha Demo Bot
+Cadence Day Bot
 ======
 
 This is the first bot I'm making to interact with groupme.
