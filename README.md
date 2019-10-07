@@ -22,6 +22,8 @@ $ set DEBUG=1 # windows only, space/case sensitive
 $ gunicorn app:app --log-file bot.log & # Run botserver in background, only for unix
 $ waitress-serve --listen=*:8000 app:app # the first parameter is app.py in app:app
 $ python3 bot_cli.py # Run CLI for sending messages to bot
+
+You can use :quit to exit the cli successfully (but the server is gonna keep running obviously)
 ```
 
 data looks like

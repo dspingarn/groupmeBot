@@ -12,7 +12,7 @@ class BotController:
         text = recd_msg['text'].lower()
 
         # helper function that returns true if the given word is in the word list
-        # the word list is parameter for used_any()
+        # the word list is parameter for calling used_any()
         used_any = lambda word_list: any(map(lambda x : x in text, word_list))
 
         if BotController.BOT_NAME in text and used_any(BotController.GREETING_WORDS):
@@ -20,6 +20,6 @@ class BotController:
         elif 'help' in text:
             msg_to_send['text'] = 'No help for you!'
         else:
-            msg_to_send['text'] = 'Echo: ' + recd_msg['text']
+            msg_to_send['text'] = 'I\'m sorry, my responses are limited. You must ask the right questions.'
 
         return msg_to_send
