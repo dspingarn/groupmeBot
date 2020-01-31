@@ -57,7 +57,7 @@ if __name__ == '__main__':
     if text.startswith(':'):
       commands = text.split()
       # special commands:
-      if commands[0] == ':quit':
+      if commands[0] == ':quit' or commands[0] == ':q':
         break
       #elif commands[0] == ':canned':
       #  request_canned_message(commands[1])
