@@ -12,12 +12,17 @@ Run the local client:
 ```
 $ source debug_setup.sh # unix only
 $ set DEBUG=1 # windows only, space/case sensitive
-$ gunicorn app:app --log-file bot.log & # Run botserver in background, only for unix
 $ waitress-serve --listen=*:8000 app:app # the first parameter is app.py in app:app
-$ python3 bot_cli.py # Run CLI for sending messages to bot
-
-You can use :quit to exit the cli successfully (but the server is gonna keep running, obviously)
+$ python bot_cli.py # Run CLI for sending messages to bot
 ```
+You may wish to  
+1. use a virtual envrionment (need to run source /env/Scripts/activate, or maybe just env/Scripts/activate.bat depending on OS)
+2. use a different python wsgi server besides waitress, but waitress works well on windows (a gunicorn example might be the following)
+```
+$ gunicorn app:app --log-file bot.log & # Run botserver in background
+```
+You can use :quit to exit the cli successfully at any time while the server is running.  
+
 
 sample data payload looks like:  
 {  
