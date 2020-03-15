@@ -1,11 +1,11 @@
-Test GroupMe Bot
-======
+# Test GroupMe Bot
 
 This is the first bot I'm making to interact with groupme.
 http://www.apnorton.com/blog/2017/02/28/How-I-wrote-a-Groupme-Chatbot-in-24-hours/ for original bot
 
-Local Testing
--------------
+### \*I will no longer be adding new features to this repo, but will update dependencies if needed.\*  
+
+## Local Testing
 
 Run the local client: 
 
@@ -39,14 +39,3 @@ sample data payload looks like:
   "text": "Hello world ☃☃",  
   "user_id": "1234567890"  
 }  
-
-Changelog
--------------
-
-1.0.6: updated python to 3.7.6  
-1.0.5: updated waitress to 1.4.2  
-1.0.4: updated waitress to 1.4.1  
-1.0.3: updated waitress to 1.4.0  
-1.0.2: Simple response handling  
-1.0.1: Local client added  
-1.0.0: Simple echo bot  
