@@ -39,3 +39,6 @@ sample data payload looks like:
   "text": "Hello world ☃☃",  
   "user_id": "1234567890"  
 }  
+
+## Deploying to Heroku
+`git push heroku master`
